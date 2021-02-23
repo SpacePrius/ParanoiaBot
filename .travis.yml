@@ -4,15 +4,16 @@ python:
   - "3.7"
   - "3.8"
   - "3.9"
+env:
+  - PGUSER=postgres
 services:
   - postgresql
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - export PGUSER=postgres
 # command to run tests
 before_script:
-  - psql -c 'create database paranoia;' - U postgres
+  - psql -c 'create database paranoia;' -U postgres
 script:
   - python backend/manage.py makemigrations paranoia
   - python backend/manage.py migrate
