@@ -35,7 +35,7 @@ class User(models.Model):
         return user.id
 
     class Meta:
-        abstract = true
+        abstract = True
 
 
 class Player(User, models.Model):
