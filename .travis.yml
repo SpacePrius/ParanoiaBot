@@ -10,7 +10,9 @@ services:
   - postgresql
 # command to install dependencies
 install:
+ 
   - pip install -r requirements.txt
+  - pip install pytest pytest-django
 # command to run tests
 before_script:
   - psql -c 'create database paranoia;' -U postgres

@@ -64,8 +64,7 @@ class Troubleshooter(models.Model):
 
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     name = models.CharField(null=True, max_length=100),
-    clearance = models.IntegerField(
-        max_length=1, choices=Clearance.choices, default=Clearance.RED)
+    clearance = models.IntegerField(choices=Clearance.choices, default=Clearance.RED)
     management = models.IntegerField(null=True)
     stealth = models.IntegerField(null=True)
     violence = models.IntegerField(null=True)
@@ -73,7 +72,7 @@ class Troubleshooter(models.Model):
     software = models.IntegerField(null=True)
     wetware = models.IntegerField(null=True)
     credits = models.BigIntegerField()
-    mbd = models.CharField(null=True, max_length=100)
+    mbd = models.CharField(null=True)
     perversity = models.IntegerField(null=True)
 
 
